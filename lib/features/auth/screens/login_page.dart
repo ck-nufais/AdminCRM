@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../core/constants/images.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -11,11 +13,8 @@ class LoginPage extends StatelessWidget {
            children: [
              Column(
                children: [
-         SvgPicture.asset(
-           'assets/icons/home.svg',
-           height: 50,
-           width: 50,
-         )
+
+                 Image.asset(logo,fit: BoxFit.cover,height: 50,width: 50,)
                ],
              )
            ],
