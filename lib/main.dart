@@ -1,4 +1,4 @@
-import 'package:crm_admin/core/widgets/admin_dashboard.dart';
+import 'package:crm_admin/features/auth/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,8 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const AdminDashboard(), 
-    );
+      home: LoginPage(),
+        );
+
   }
 }
