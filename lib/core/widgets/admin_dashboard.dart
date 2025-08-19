@@ -1,4 +1,4 @@
-
+import 'package:crm_admin/features/Home/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class AdminDashboard extends StatefulWidget {
@@ -21,7 +21,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   ];
 
   final pages = [
-    Center(child: Text("Dashboard Page")),
+    Center(child: Text("dashboard Page")),
     Center(child: Text("Customers Page")),
     Center(child: Text("Leads Page")),
     Center(child: Text("Reports Page")),
