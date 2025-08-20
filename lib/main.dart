@@ -1,8 +1,5 @@
-import 'package:crm_admin/core/widgets/admin_dashboard.dart';
-import 'package:crm_admin/features/auth/screens/login_page.dart';
-import 'package:crm_admin/features/Home/screens/home.dart';
-import 'package:crm_admin/features/customer_registeration/screens/customer_register.dart';
-import 'package:crm_admin/features/employee_registeration/screens/employee_register.dart';
+
+import 'package:crm_admin/features/layout/widgets/navbar.dart';
 import 'package:crm_admin/features/layout/widgets/sidebar.dart';
 import 'package:crm_admin/utils/navigation_provider.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +29,7 @@ class MainApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Sidebar(),
+      home: Navbar(),
     );
   }
 }

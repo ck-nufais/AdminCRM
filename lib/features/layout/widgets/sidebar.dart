@@ -40,8 +40,7 @@ class _SidebarState extends State<Sidebar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return  Stack(
         clipBehavior: Clip.none,
         children: [
           AnimatedContainer(
@@ -196,8 +195,7 @@ class _SidebarState extends State<Sidebar> {
               ),
             ),
         ],
-      ),
-    );
+      );
   }
 
   Widget _buildHeader() {
