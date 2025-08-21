@@ -9,6 +9,8 @@ class SidebarIcons {
   static const String ticket = "assets/icons/ticket.svg";
   static const String register = "assets/icons/register.svg";
   static const String msg = "assets/icons/chat.svg";
+  static const String arrow_h = "assets/icons/left_arrow.svg";
+  static const String arrow_v = "assets/icons/down_arrow.svg";
 
 }
 //home_view icons

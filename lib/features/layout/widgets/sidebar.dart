@@ -180,13 +180,13 @@ class _SidebarState extends State<Sidebar> {
             ),
           ),
 
-          // Positioned.fill(child: Align(alignment: Alignment.center)),
+   
           if (isCollapsed)
             Positioned(
               top: 30,
               right: -10,
               child: IconButton(
-                icon: Icon(Icons.arrow_right, color: Colors.black),
+                icon: SvgPicture.asset(SidebarIcons.arrow_h),
                 onPressed: () {
                   setState(() {
                     isCollapsed = !isCollapsed;
@@ -217,7 +217,7 @@ class _SidebarState extends State<Sidebar> {
           ),
           if (!isCollapsed)
             IconButton(
-              icon: const Icon(Icons.arrow_left, color: Colors.black),
+              icon:  Transform.rotate(angle: 3.14,child: SvgPicture.asset(SidebarIcons.arrow_h)),
               onPressed: () {
                 setState(() {
                   isCollapsed = true;

@@ -28,13 +28,13 @@ class _NavbarState extends State<Navbar> {
                 style: TextStyle(
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize:24,
                 ),
               ),
               SizedBox(height: 2),
               Text(
                 "welcome back,",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
             ],
           ),
@@ -57,7 +57,7 @@ class _NavbarState extends State<Navbar> {
                   child: Text(
                     menuItems[index],
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                       fontWeight:
                           isSelected ? FontWeight.w600 : FontWeight.w400,
                       color: isSelected
