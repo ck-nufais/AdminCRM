@@ -1,4 +1,5 @@
 
+import 'package:crm_admin/core/widgets/admin_dashboard.dart';
 import 'package:crm_admin/features/layout/widgets/navbar.dart';
 import 'package:crm_admin/features/layout/widgets/sidebar.dart';
 import 'package:crm_admin/utils/navigation_provider.dart';
@@ -25,11 +26,11 @@ class MainApp extends StatelessWidget {
         fontFamily: 'Poppins',
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(
-            backgroundColor: Colors.transparent, // removes yellow highlight
+            backgroundColor: Colors.transparent, 
           ),
         ),
       ),
-      home: Navbar(),
+      home: Homepart(),
     );
   }
 }

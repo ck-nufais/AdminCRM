@@ -8,21 +8,21 @@ class Navbar extends StatefulWidget {
 }
 
 class _NavbarState extends State<Navbar> {
-  int selectedIndex = 0;
-
-  final List<String> menuItems = ["Home", "Registration", "Chat"];
+  final List<String> menuItems = ["Home", "Registration", "Chat","Profile"];
+  int selectedIndex = 0; // ✅ now handled internally
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-   
+      height: 70,
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Row(
         children: [
-          // Left branding
-          const Column(
+
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 "Admin",
                 style: TextStyle(
@@ -38,57 +38,39 @@ class _NavbarState extends State<Navbar> {
               ),
             ],
           ),
-
-          const Spacer(),
-
-          // Center nav items
+          Spacer(),
+    
+          // ✅ Menu (center)
           Row(
+            spacing: 20,
+            mainAxisSize: MainAxisSize.min,
             children: List.generate(menuItems.length, (index) {
               final isSelected = selectedIndex == index;
-              return InkWell(
-                onTap: () {
-                  setState(() {
-                    selectedIndex = index;
-                  });
-                },
-                borderRadius: BorderRadius.circular(8),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        menuItems[index],
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight:
-                              isSelected ? FontWeight.w600 : FontWeight.w400,
-                          color: isSelected
-                              ? Colors.black
-                              : Colors.blueGrey[300],
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        height: 2.5,
-                        width: isSelected ? 28 : 0,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(2),
-                        ),
-                      ),
-                    ],
+              return 
+
+                 InkWell(
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = index; 
+                    });
+                  },
+                  child: Text(
+                    menuItems[index],
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight:
+                          isSelected ? FontWeight.w600 : FontWeight.w400,
+                      color: isSelected
+                          ? Colors.black
+                          : Colors.blueGrey[400],
+                    ),
                   ),
-                ),
+                // ),
               );
             }),
           ),
-
-          const Spacer(),
-
-          // Right profile icon
+    
+          // ✅ Profile icon (right aligned)
           CircleAvatar(
             backgroundColor: Colors.blue.shade50,
             radius: 18,
