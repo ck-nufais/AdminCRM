@@ -42,7 +42,7 @@ class _NavbarState extends State<Navbar> {
     
           // ✅ Menu (center)
           Row(
-            spacing: 20,
+            spacing: 35,
             mainAxisSize: MainAxisSize.min,
             children: List.generate(menuItems.length, (index) {
               final isSelected = selectedIndex == index;
@@ -71,11 +71,12 @@ class _NavbarState extends State<Navbar> {
           ),
     
           // ✅ Profile icon (right aligned)
-          CircleAvatar(
-            backgroundColor: Colors.blue.shade50,
-            radius: 18,
-            child: const Icon(Icons.person, color: Colors.blue),
-          ),
+        Image.asset(
+              'assets/logo/logo.png',
+              width: 32,
+              height: 32,
+              fit: BoxFit.contain,
+            ),
         ],
       ),
     );

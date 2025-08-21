@@ -254,7 +254,7 @@ class _SidebarState extends State<Sidebar> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset(SidebarIcons.home, width: 32, color: Colors.black),
+            SvgPicture.asset(SidebarIcons.logout, width: 32, color: Colors.black),
             if (!isCollapsed) const SizedBox(width: 5),
             if (!isCollapsed)
               const Text("Logout", style: TextStyle(color: Colors.black)),
