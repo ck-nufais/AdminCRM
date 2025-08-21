@@ -12,6 +12,8 @@ class SidebarIcons {
   static const String arrow_h = "assets/icons/left_arrow.svg";
   static const String arrow_v = "assets/icons/down_arrow.svg";
 
+static const String logout = 'assets/icons/logout.svg';
+
 }
 //home_view icons
 const userTotal = 'assets/icons/user_total.svg';
