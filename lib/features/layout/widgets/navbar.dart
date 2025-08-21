@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Navbar extends StatefulWidget {
-  const Navbar({super.key});
+class Navbar extends StatelessWidget {
+  final List<String> menuItems;
+  final int selectedIndex;
+  final ValueChanged<int> onItemSelected;
 
-  @override
-  State<Navbar> createState() => _NavbarState();
-}
-
-class _NavbarState extends State<Navbar> {
-  final List<String> menuItems = ["Home", "Registration", "Chat","Profile"];
-  int selectedIndex = 0; // ✅ now handled internally
+  const Navbar({
+    super.key,
+    required this.menuItems,
+    required this.selectedIndex,
+    required this.onItemSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class _NavbarState extends State<Navbar> {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Row(
         children: [
-
+          // ✅ Admin Info (left)
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +29,7 @@ class _NavbarState extends State<Navbar> {
                 style: TextStyle(
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
-                  fontSize:24,
+                  fontSize: 24,
                 ),
               ),
               SizedBox(height: 2),
@@ -38,45 +39,36 @@ class _NavbarState extends State<Navbar> {
               ),
             ],
           ),
-          Spacer(),
-    
+
+          const Spacer(),
+
           // ✅ Menu (center)
           Row(
             spacing: 35,
             mainAxisSize: MainAxisSize.min,
             children: List.generate(menuItems.length, (index) {
               final isSelected = selectedIndex == index;
-              return 
-
-                 InkWell(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index; 
-                    });
-                  },
-                  child: Text(
-                    menuItems[index],
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight:
-                          isSelected ? FontWeight.w600 : FontWeight.w400,
-                      color: isSelected
-                          ? Colors.black
-                          : Colors.blueGrey[400],
-                    ),
+              return InkWell(
+                onTap: () => onItemSelected(index),
+                child: Text(
+                  menuItems[index],
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                    color: isSelected ? Colors.black : Colors.blueGrey[400],
                   ),
-                // ),
+                ),
               );
             }),
           ),
-    
-          // ✅ Profile icon (right aligned)
-        Image.asset(
-              'assets/logo/logo.png',
-              width: 32,
-              height: 32,
-              fit: BoxFit.contain,
-            ),
+
+          // ✅ Profile icon (right)
+          Image.asset(
+            'assets/logo/logo.png',
+            width: 32,
+            height: 32,
+            fit: BoxFit.contain,
+          ),
         ],
       ),
     );

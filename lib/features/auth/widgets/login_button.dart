@@ -12,12 +12,12 @@ class LoginButton extends StatelessWidget {
       height: 50,
       child: ElevatedButton(onPressed: () {
 
-      }, child: Text('Login'),style: ElevatedButton.styleFrom(
+      },style: ElevatedButton.styleFrom(
           backgroundColor: Color(0xFF002660),
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10))
 
-      ),),
+      ), child: Text('Login'),),
     );
   }
 }

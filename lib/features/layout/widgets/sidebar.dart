@@ -64,7 +64,7 @@ class _SidebarState extends State<Sidebar> {
                           List<Map<String, dynamic>>.from(
                         menuItems[index]['subMenu'] ?? [],
                       );
-                      bool HasDropDown = !DropDownItems.isEmpty;
+                      bool HasDropDown = DropDownItems.isNotEmpty;
 
                       return Column(
                         children: [

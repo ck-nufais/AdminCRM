@@ -1,5 +1,4 @@
 import 'package:crm_admin/features/Home/widgets/track_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TicketCardWidget extends StatelessWidget {
